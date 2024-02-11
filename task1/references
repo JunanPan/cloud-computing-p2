@@ -6,6 +6,12 @@
             "url":"<url>",
             "code":"<in which code you use the snippet or the idea>",
             "description":"<additional information you find it necessary to provide>"
+        },
+        {  
+            "title":"Intro to Containers and Docker Understanding Containers and Docker",
+            "url":"https://projects.sailplatform.org/s24-15319/intro-to-containers",
+            "code":"FROM maven:3.8.4-jdk-8-slim AS build",
+            "description":"<additional information you find it necessary to provide>"
         }
     ],
     "collaborators":[
