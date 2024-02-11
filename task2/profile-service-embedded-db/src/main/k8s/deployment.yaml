@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-profile-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spring-profile-service
+  template:
+    metadata:
+      labels:
+        app: spring-profile-service
+    spec:
+      containers:
+      - name: profile-service
+        image: profile-service
+        ports:
+        - containerPort: 8080
