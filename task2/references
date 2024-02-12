@@ -6,6 +6,12 @@
             "url":"<url>",
             "code":"<in which code you use the snippet or the idea>",
             "description":"<additional information you find it necessary to provide>"
+        },
+        {  
+            "title":"Kubernetes and Container Orchestration Concepts and Hands-on Practice with Kubernetes.",
+            "url":"https://projects.sailplatform.org/s24-15319/kubernetes-container-orchestration",
+            "code":"apiVersion: apps/v1 kind: Deployment metadata: name: spring-profile-deployment...",
+            "description":"<additional information you find it necessary to provide>"
         }
     ],
     "collaborators":[
