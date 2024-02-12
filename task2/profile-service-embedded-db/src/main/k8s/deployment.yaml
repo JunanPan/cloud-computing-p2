@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: profile-service
-        image: profile-service
+        image: gcr.io/gcp-docker-kubernetes-414008/task2-service:task2-service
         ports:
         - containerPort: 8080
