@@ -12,6 +12,12 @@
             "url":"https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#configure-all-key-value-pairs-in-a-configmap-as-container-environment-variables",
             "code":"<in which code you use the snippet or the idea>",
             "description":"<additional information you find it necessary to provide>"
+        },
+        {  
+            "title":"Connection Java - MySQL : Public Key Retrieval is not allowed",
+            "url":"https://stackoverflow.com/questions/50379839/connection-java-mysql-public-key-retrieval-is-not-allowed",
+            "code":"spring.datasource.url = jdbc:mysql://${MYSQL_DB_HOST}:${MYSQL_DB_PORT}/test?allowPublicKeyRetrieval=true&useSSL=false",
+            "description":"<additional information you find it necessary to provide>"
         }
     ],
     "collaborators":[
