@@ -17,3 +17,7 @@ spec:
         image: gcr.io/gcp-docker-kubernetes-414008/task2-service:task2-service
         ports:
         - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: spring-profile-config
+
