@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: spring-profile-deployment
+  labels:  # Unique labels for the chat service
+    app: spring-profile-service
 spec:
   replicas: 3
   selector:
