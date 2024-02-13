@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: profile-service
-        image: task5.azurecr.io/task5-profile-service:task5-profile-service
+        image: task5.azurecr.io/task5-profile-service:v1
         ports:
         - containerPort: 8080
         resources:
