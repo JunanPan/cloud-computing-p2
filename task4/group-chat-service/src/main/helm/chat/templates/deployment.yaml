@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: spring-chat-deployment
-  labels:  # Unique labels for the chat service
+  labels:
     app: spring-chat-service
 spec:
   replicas: 3
