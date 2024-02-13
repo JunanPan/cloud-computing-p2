@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-login-deployment
+  labels:
+    app: spring-login-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spring-login-service
+  template:
+    metadata:
+      labels:
+        app: spring-login-service
+    spec:
+      containers:
+      - name: login-service
+        image: gcr.io/gcp-docker-kubernetes-414008/task4-login-service:task4-login-service
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: spring-login-config
+
