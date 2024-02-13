@@ -6,6 +6,12 @@
             "url":"<url>",
             "code":"<in which code you use the snippet or the idea>",
             "description":"<additional information you find it necessary to provide>"
+        },
+        {  
+            "title":"Configuring horizontal Pod autoscaling",
+            "url":"https://cloud.google.com/kubernetes-engine/docs/how-to/horizontal-pod-autoscaling",
+            "code":"resources requests: cpu: 200",
+            "description":"<additional information you find it necessary to provide>"
         }
     ],
     "collaborators":[
