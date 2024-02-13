@@ -6,6 +6,12 @@
             "url":"<url>",
             "code":"<in which code you use the snippet or the idea>",
             "description":"<additional information you find it necessary to provide>"
+        },
+        {  
+            "title":"404 Error for Chat and Login Services",
+            "url":"piazza question 542",
+            "code":"ingressClassName: nginx",
+            "description":"<additional information you find it necessary to provide>"
         }
     ],
     "collaborators":[
