@@ -28,18 +28,29 @@ resource "azurerm_frontdoor" "frontdoor" {
   # health probe for the login service
   backend_pool_health_probe {
     name = "probelogin"
+    path = "/login"
+    protocol = "Http"
+    probe_method = "HEAD"
+    interval_in_seconds = 30
     # TODO: add more configurations
   }
 
   # health probe for the chat service
   backend_pool_health_probe {
     name = "probechat"
+    path = "/chat"
+    protocol = "Http"
+    probe_method = "HEAD"
+    interval_in_seconds = 30
     # TODO: add more configurations
   }
 
   # load balancing settings 
   backend_pool_load_balancing {
     name = "wecloudloadbalancer"
+    sample_size = 4
+    successful_samples_required = 2
+    additional_latency_milliseconds = 50
     # TODO: add more configurations
   }
 
@@ -52,6 +63,9 @@ resource "azurerm_frontdoor" "frontdoor" {
       host_header = var.gcp_ingress_external_ip
       address     = var.gcp_ingress_external_ip
       # TODO: add more configurations
+      http_port   = 80
+      https_port  = 443
+      
     }
 
     # backend from azure
@@ -59,9 +73,13 @@ resource "azurerm_frontdoor" "frontdoor" {
       host_header = var.azure_ingress_external_ip
       address     = var.azure_ingress_external_ip
       # TODO: add more configurations
+      http_port   = 80
+      https_port  = 443
     }
 
     # TODO: add more configurations
+    load_balancing_name = "wecloudloadbalancer"
+    health_probe_name = "probelogin"
   }
 
   # backend pool for the chat service
@@ -73,21 +91,39 @@ resource "azurerm_frontdoor" "frontdoor" {
       host_header = var.gcp_ingress_external_ip
       address     = var.gcp_ingress_external_ip
       # TODO: add more configurations
+      http_port   = 80
+      https_port  = 443
     }
 
     # TODO: add more configurations
+    load_balancing_name = "wecloudloadbalancer"
+    health_probe_name = "probechat"
   }
 
   # routing rule for login and profile services
   routing_rule {
     name               = "loginprofilerouting"
     # TODO: add more configurations
+    accepted_protocols = [ "Http"]
+    patterns_to_match = [ "/login", "/profile"]
+    frontend_endpoints = [ "frontendEndpoint" ]
+    forwarding_configuration {
+      forwarding_protocol = "Http"
+      backend_pool_name = "wecloudbackendloginprofile"
+    }
   }
 
   # routing rule for chat service
   routing_rule {
     name               = "chatrouting"
     # TODO: add more configurations
+    accepted_protocols = [ "Http"]
+    patterns_to_match = [ "/chat", "/chat/*"]
+    frontend_endpoints = [ "frontendEndpoint" ]
+    forwarding_configuration {
+      forwarding_protocol = "Http"
+      backend_pool_name = "wecloudbackendchat"
+    }
   }
   
 }
