@@ -31,20 +31,6 @@ spec:
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: spring-login-autoscaling
-  namespace: default
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: spring-login-deployment
-  minReplicas: 1
-  maxReplicas: 10
-  targetCPUUtilizationPercentage: 50
----
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
-metadata:
   name: azure-login-hpa
 spec:
   maxReplicas: 10 # define max replica count
