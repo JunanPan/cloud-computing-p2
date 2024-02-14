@@ -24,6 +24,7 @@ spec:
           # based on CPU utilization
           requests:
             cpu: "200m"
+            memory: "256Mi"
         envFrom:
         - configMapRef:
             name: spring-login-config
