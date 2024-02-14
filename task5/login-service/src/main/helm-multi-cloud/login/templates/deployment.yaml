@@ -45,7 +45,7 @@ spec:
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: azure-vote-front-hpa
+  name: azure-login-hpa
 spec:
   maxReplicas: 10 # define max replica count
   minReplicas: 1  # define min replica count
