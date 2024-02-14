@@ -6,6 +6,12 @@
             "url":"<url>",
             "code":"<in which code you use the snippet or the idea>",
             "description":"<additional information you find it necessary to provide>"
+        },
+        {  
+            "title":"azurerm_frontdoor",
+            "url":"https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/frontdoor#address",
+            "code":"<in which code you use the snippet or the idea>",
+            "description":"<additional information you find it necessary to provide>"
         }
     ],
     "collaborators":[
