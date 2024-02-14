@@ -108,7 +108,7 @@ resource "azurerm_frontdoor" "frontdoor" {
     patterns_to_match = [ "/login", "/profile"]
     frontend_endpoints = [ "frontendEndpoint" ]
     forwarding_configuration {
-      forwarding_protocol = "Http"
+      forwarding_protocol = "HttpOnly"
       backend_pool_name = "wecloudbackendloginprofile"
     }
   }
@@ -121,7 +121,7 @@ resource "azurerm_frontdoor" "frontdoor" {
     patterns_to_match = [ "/chat", "/chat/*"]
     frontend_endpoints = [ "frontendEndpoint" ]
     forwarding_configuration {
-      forwarding_protocol = "Http"
+      forwarding_protocol = "HttpOnly"
       backend_pool_name = "wecloudbackendchat"
     }
   }
