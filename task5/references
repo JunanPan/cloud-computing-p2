@@ -14,9 +14,15 @@
             "description":"<additional information you find it necessary to provide>"
         },
         {  
-            "title":"https://learn.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-acr#push-image-to-azure-container-registry",
+            "title":"Push image to Azure Container Registry",
             "url":"https://learn.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-acr#push-image-to-azure-container-registry",
             "code":"docker push mycontainerregistry082.azurecr.io/aci-tutorial-app:v1",
+            "description":"<additional information you find it necessary to provide>"
+        },
+        {  
+            "title":"Create a new AKS cluster and integrate with an existing ACR",
+            "url":"https://learn.microsoft.com/en-us/azure/aks/cluster-container-registry-integration?tabs=azure-cli",
+            "code":"az aks update -n task5 -g cc_task5 --attach-acr task5",
             "description":"<additional information you find it necessary to provide>"
         }
     ],
